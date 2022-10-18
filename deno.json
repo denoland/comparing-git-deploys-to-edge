@@ -1,0 +1,5 @@
+{
+  "tasks": {
+    "ping": "git add . && git commit -am 'update' && git push origin main && deno run -A ../tasks/ping.ts"
+  }
+}
