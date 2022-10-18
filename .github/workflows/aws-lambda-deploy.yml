@@ -9,6 +9,9 @@ jobs:
   deploy_source:
     name: build and deploy lambda
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./aws-lambda@edge
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js 16
