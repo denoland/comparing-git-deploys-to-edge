@@ -1,0 +1,23 @@
+{
+  "name": "aws-lambda-edge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lambtron/aws-lambda-edge-git-deploy-demo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lambtron/aws-lambda-edge-git-deploy-demo/issues"
+  },
+  "homepage": "https://github.com/lambtron/aws-lambda-edge-git-deploy-demo#readme",
+  "dependencies": {
+    "typescript": "^4.8.3"
+  }
+}
