@@ -19,12 +19,11 @@ jobs:
         with:
           node-version: 16
       - name: Install dependencies, Build application and Zip dist folder contents
-        run: npm install && zip -qq -r -j ./bundle.zip ./src/*
-      - name: deploy zip to aws lambda
-        uses: appleboy/lambda-action@master
+        run: npm install
+      - name: serverless deploy
+        uses: serverless/github-action@master
         with:
-          aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws_region: ${{ secrets.AWS_REGION }}
-          function_name: git-deploy-to-the-edge-demo
-          zip_file: bundle.zip
+          args: deploy --stage production --region ${{ secrets.AWS_REGION }}
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
